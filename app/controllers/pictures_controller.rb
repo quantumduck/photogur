@@ -13,7 +13,11 @@ class PicturesController < ApplicationController
 
   def create
     # make a new picture with what picture_params returns (which is a method we're calling)
-    @picture = Picture.new(picture_params)
+    # @picture = Picture.new(picture_params)
+    @picture = Picture.new  # Alternate method
+    @picture.title = params[:title]
+    @picture.url = params[:url]
+    @picture.artist = params[:artist]
     if @picture.save
       # if the save for the picture was successful, go to index.html.erb
       redirect_to pictures_url
@@ -29,9 +33,9 @@ class PicturesController < ApplicationController
 
 private
 
-  def picture_params
-    # params sanitation method
-    params.require(:picture).permit(:artist, :title, :url)
-  end
+  # def picture_params
+  #   # params sanitation method
+  #   params.require(:picture).permit(:artist, :title, :url)
+  # end
 
 end
