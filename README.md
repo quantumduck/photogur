@@ -1,24 +1,22 @@
-# README
+# Photogur
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the Bitmaker Imgur clone assignment. The repository was generated with
+the command "rails new photogur".
 
-Things you may want to cover:
+rails command order and syntax:
 
-* Ruby version
+1. add route
+  get 'pictures' => 'pictures#index'
 
-* System dependencies
+2. add controller
+  rails generate controller pictures
+  [=> class PicturesController < ApplicationController]
 
-* Configuration
+3. add method index to controller
 
-* Database creation
+4. add view
+  views/pictures/index.html.erb
 
-* Database initialization
+  
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+For now, there's nothing else to see here.
