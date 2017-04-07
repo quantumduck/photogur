@@ -17,6 +17,12 @@ rails command order and syntax:
 4. add view
   views/pictures/index.html.erb
 
+5. created Picture
+  rails generate model Picture artist:string title:string url:string
+
+6. migrate Picture class to database:
+  rails db:migrate
+
   
 
 For now, there's nothing else to see here.
