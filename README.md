@@ -22,7 +22,11 @@ rails command order and syntax:
 
 6. migrate Picture class to database:
   rails db:migrate
+  rails db:seed
 
-  
+7. for dynamic routes, use syntax (note that this creates picture_path(id) )
+  get 'pictures/:id' => 'pictures#show', as: 'picture'
+
+
 
 For now, there's nothing else to see here.
