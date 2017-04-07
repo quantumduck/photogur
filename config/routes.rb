@@ -2,14 +2,16 @@ Rails.application.routes.draw do
 
   root 'pictures#index'
 
-  get 'pictures' => 'pictures#index'
-  post 'pictures' => 'pictures#create'
+  resources :pictures # automagically adds all the routes below:
+  # get 'pictures' => 'pictures#index'
+  # get 'pictures/new' => 'pictures#new'
+  # get 'pictures/:id' => 'pictures#show', as: 'picture'
+  # get 'pictures/:id/edit' => "pictures#edit", as: "edit_picture"
+  #
+  # post 'pictures' => 'pictures#create'
+  # patch 'pictures/:id' => "pictures#update"
+  # delete 'pictures/:id' => 'pictures#destroy', as: "delete_picture" # if you use this, you need
+                                                                      # delete_picture_path(@picture)
 
-  get 'pictures/new' => 'pictures#new'
-
-  get 'pictures/:id/edit' => "pictures#edit", as: "edit_picture"
-  patch 'pictures/:id' => "pictures#update"
-
-  get 'pictures/:id' => 'pictures#show', as: 'picture'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
