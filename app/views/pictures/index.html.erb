@@ -1,6 +1,8 @@
 <header>
-  <h1>Wow! So Very Pictures!</h1>
-  <p>Not pictures enough? <%= link_to "Much click here!", "/pictures/new" %></p>
+  <h1 class="long">Wow! So Very Pictures!</h1>
+  <h1 class="short">So Very Pictures!</h1>
+  <p class="long">Not pictures enough? <%= link_to "Much click here!", "/pictures/new" %></p>
+  <p class="short"><%= link_to "Much new here!", "/pictures/new" %></p>
 </header>
 
 <ul class="allpics clearfix">
@@ -14,5 +16,3 @@
   <% end %>
   </li>
 </ul>
-
-<div></div>

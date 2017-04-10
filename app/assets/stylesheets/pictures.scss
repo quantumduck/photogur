@@ -25,6 +25,15 @@ h1 {
   font-size: 1.5em;
 }
 
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+.long {
+  display: none;
+}
+
 .clearfix::after {
   content: "";
   display: table;
@@ -38,9 +47,11 @@ h1 {
   margin: auto;
 }
 
+
+
 .small_pic {
   position: relative;
-  padding: 4em;
+  padding: 2em;
   color: #403000;
   padding: 0px;
   margin: 0px;
@@ -57,6 +68,7 @@ h1 {
   right: 0;
   width: 100%;
   padding: 1em;
+  font-size: 0.5em;
 }
 
 .small_pic:hover {
@@ -99,15 +111,49 @@ body > footer {
   h1 {
     font-size: 2em;
   }
+
+  .long {
+    display: block;
+  }
+
+  .short {
+    display: none;
+  }
 }
 
 @media (min-width: 768px) {
+  body {
+    font-size: 1.3em;
+  }
+
   .small_pic {
     float: left;
-    width: 50%
+    width: 50%;
+    padding: 2em;
   }
 
   .small_pic:nth-child(2n+1) {
+    clear: both;
+  }
+
+}
+
+@media (min-width: 1280px) {
+
+  h1 {
+    font-size: 3em;
+  }
+
+  .small_pic {
+    width: 33.3333%;
+  }
+
+  .small_pic:nth-child(2n+1) {
+    clear: none;
+  }
+
+
+  .small_pic:nth-child(3n+1) {
     clear: both;
   }
 
