@@ -1,7 +1,16 @@
-<h1>Pictures</h1>
-<%= link_to "New Picture", "/pictures/new" %>
+<header>
+  <h1>Wow! So Very Pictures!</h1>
+  <p>Not pictures enough? <%= link_to "Much click here!", "/pictures/new" %></p>
+</header>
 
-<% @pictures.each do |picture| %>
-  <p><%= picture.title %>, <%= picture.artist %></p>
-  <%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
-<% end %>
+<ul class="allpics">
+  <% @pictures.each do |picture| %>
+  <li>
+    <figure class="pic">
+      <%= link_to image_tag(picture.url, width: "#{@width}"), "/pictures/#{picture.id}" %>
+      <br>
+      <caption><%= picture.title %> | <%= picture.artist %></caption>
+    </figure>
+  <% end %>
+  </li>
+</ul>

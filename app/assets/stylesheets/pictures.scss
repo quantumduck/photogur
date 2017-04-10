@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   font-family: 'Press Start 2P', cursive;
 }
@@ -5,4 +11,55 @@ html {
 body {
   background-color: #403000;
   color: #060800;
+}
+
+.allpics {
+  list-style-type: none;
+  max-width: 1024px;
+  width: 100%;
+  margin: auto;
+}
+
+.allpics > li {
+  padding: 0px;
+  margin: 0px;
+}
+
+.pic {
+  display: inline-block;
+}
+
+.pic > img {
+}
+
+body > footer {
+  color: white;
+  background-color: black;
+  text-align: center;
+  font-weight: bold;
+  padding: 18px;
+  font-size: 15px;
+  margin: auto;
+}
+
+.copyright {
+  display: inline-block;
+  margin: 0px;
+  line-height: 3em;
+}
+
+.logo {
+  float: left;
+  margin: 0px;
+  line-height: 5px;
+  /*background-color: red;*/
+}
+
+
+.logo > pre {
+  font-family: monospace;
+  font-size: 8px;
+  font-weight: 900;
+  padding: 0px;
+  margin: 0px;
 }

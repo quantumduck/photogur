@@ -1,6 +1,7 @@
 class PicturesController < ApplicationController
   def index
     @pictures = Picture.all
+    @width = 300
   end
 
   def show
