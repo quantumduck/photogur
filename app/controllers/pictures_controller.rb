@@ -51,6 +51,21 @@ class PicturesController < ApplicationController
     redirect_to pictures_url
   end
 
+  def artists
+    reditect_to_pictures_url
+  end
+
+  def artist
+    @artist = params[:name]
+    @pictures = Picture.where(artist: params[:name])
+    if @pictures.length > 0
+
+    else
+      flash[:notice] = "There are no pictures by #{@artist} in the collection."
+      redirect_to pictures_url
+    end
+  end
+
 private
 
   def picture_params

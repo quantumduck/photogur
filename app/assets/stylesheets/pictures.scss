@@ -79,6 +79,15 @@ figure {
   font-size: 0.5em;
 }
 
+.small_pic  a {
+  color: #403000;
+}
+
+.small_pic:hover a {
+  color: blue;
+}
+
+
 .small_pic:hover {
   color: #060800;
 }

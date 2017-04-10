@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   root 'pictures#index'
 
+  get '/artists' => 'pictures#artists'
+
+  get '/artists/:name' => 'pictures#artist', as: 'artist'
+
   resources :pictures # automagically adds all the routes below:
   # get 'pictures' => 'pictures#index'
   # get 'pictures/new' => 'pictures#new'

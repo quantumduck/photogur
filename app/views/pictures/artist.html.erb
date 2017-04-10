@@ -1,0 +1,16 @@
+<header>
+  <h1 class="long"><%= "Pictures by #{@artist}"%></h1>
+  <h1 class="short"><%= "#{@artist}"%></h1>
+</header>
+
+<ul class="allpics clearfix">
+  <% @pictures.each do |picture| %>
+  <li class="small_pic">
+    <figure >
+      <%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
+      <br>
+      <caption><%= picture.title %></caption>
+    </figure>
+  <% end %>
+  </li>
+</ul>

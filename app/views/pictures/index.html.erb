@@ -1,6 +1,13 @@
 <header>
   <h1 class="long">Wow! So Very Pictures!</h1>
   <h1 class="short">So Very Pictures!</h1>
+      <% if flash[:alert] %>
+       <p class="alert"><%= flash[:alert] %></p>
+      <% end %>
+
+      <% if flash[:notice] %>
+        <p class="notice"><%= flash[:notice] %></p>
+      <% end %>
   <p class="long">Not pictures enough? <%= link_to "Much click here!", "/pictures/new" %></p>
   <p class="short"><%= link_to "Much new here!", "/pictures/new" %></p>
 </header>
@@ -11,7 +18,7 @@
     <figure >
       <%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
       <br>
-      <caption><%= picture.title %> <br> <%= picture.artist %></caption>
+      <caption><%= picture.title %> <br> <%= link_to "#{picture.artist}", "/artists/#{picture.artist}" %></caption>
     </figure>
   <% end %>
   </li>
