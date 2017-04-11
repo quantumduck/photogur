@@ -14,7 +14,7 @@
 </nav>
 <p><%= @picture.title %></p>
 <figure class="large_pic"><%= image_tag @picture.url %></figure>
-<p><%= @picture.artist %></p>
+<p>by: <%= @picture.artist %></p>
 <br>
 <%= form_tag comments_path(@picture.id) do %>
     <%= label_tag :comment, "Leave a comment:" %><br>
@@ -30,9 +30,9 @@
 <table>
 <% @comments.each do |comment| %>
   <tr>
-    <td><%= comment.created_at %>:</td>
-    <td><%= comment.contents %></td>
-    <td><%= form_tag(comment_path(@picture.id, comment.id), method: "delete") { submit_tag "Delort!" } %></td>
+    <td class="time"><%= comment.created_at %>:</td>
+    <td class="comment"><%= comment.contents %></td>
+    <td class="delete"><%= form_tag(comment_path(@picture.id, comment.id), method: "delete") { submit_tag "Delort!" } %></td>
   </tr>
 <% end %>
 </table>
@@ -40,3 +40,4 @@
 <% else %>
   <h2>No comments yet</h2>
 <% end %>
+<p>Source: <a href="<%= @picture.url%>"><%= @picture.url %></a></p>
