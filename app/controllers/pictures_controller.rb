@@ -51,6 +51,10 @@ class PicturesController < ApplicationController
   def destroy
     @picture = Picture.find(params[:id])
     @picture.destroy
+    # remove abandoned comments as well:
+    comments = Comment.where(picture: params[:id])
+    comments.each { |comment| comment.destroy }
+
     redirect_to pictures_url
   end
 
