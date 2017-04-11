@@ -6,9 +6,9 @@ class CommentsController < ApplicationController
   end
 
   def create
-    contents = params[:comment].to_s
+    comment = params[:comment].to_s
     picture_ref = params[:id]
-    @comment = Comment.new(contents: contents, picture: picture_ref)
+    @comment = Comment.new(contents: comment, picture: picture_ref)
     @comment.save
     redirect_to picture_url(picture_ref)
   end

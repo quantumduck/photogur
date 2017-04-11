@@ -7,6 +7,8 @@ class PicturesController < ApplicationController
   def show
     @picture = Picture.find(params[:id])
     @comments = Comment.where(picture: params[:id])
+    # puts "COMMENT CONTENTS = "
+    # puts @comments[0].contents
   end
 
   def new

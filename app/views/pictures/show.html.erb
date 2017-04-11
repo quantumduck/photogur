@@ -17,8 +17,8 @@
 <p><%= @picture.artist %></p>
 <br>
 <%= form_tag comments_path(@picture.id) do %>
-    <%= label_tag :contents, "Leave a comment:" %><br>
-    <%= text_field_tag :contents %>
+    <%= label_tag :comment, "Leave a comment:" %><br>
+    <%= text_field_tag :comment %>
 
     <%= submit_tag "Post!" %>
 
@@ -32,6 +32,7 @@
   <tr>
     <td><%= comment.created_at %>:</td>
     <td><%= comment.contents %></td>
+    <td><%= form_tag(comment_path(@picture.id, comment.id), method: "delete") { submit_tag "Delort!" } %></td>
   </tr>
 <% end %>
 </table>
