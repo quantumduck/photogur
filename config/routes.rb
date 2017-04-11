@@ -15,7 +15,12 @@ Rails.application.routes.draw do
   # post 'pictures' => 'pictures#create'
   # patch 'pictures/:id' => "pictures#update"
   # delete 'pictures/:id' => 'pictures#destroy', as: "delete_picture" # if you use this, you need
+
+  get 'pictures/:id/comments' => 'comments#index'
                                                                       # delete_picture_path(@picture)
+  post 'pictures/:id/comments' => 'comments#create', as: 'comments'
+
+  delete 'pictures/:id/comments/:comment_id' => 'comments#destroy', as: 'comment'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
