@@ -5,6 +5,7 @@ class PicturesController < ApplicationController
 
   def show
     @picture = Picture.find(params[:id])
+    @comments = Comment.where(picture: params[:id]).order(created_at: :DESC)
   end
 
   def new
