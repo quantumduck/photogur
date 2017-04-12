@@ -1,6 +1,6 @@
 <header>
-  <h1 class="long">Wow! So Very Pictures!</h1>
-  <h1 class="short">So Very Pictures!</h1>
+  <h1 class="long">Wow! So Very New Pictures!</h1>
+  <h1 class="short">So New Pictures!</h1>
       <% if flash[:alert] %>
        <p class="alert"><%= flash[:alert] %></p>
       <% end %>
@@ -24,3 +24,19 @@
   <% end %>
   </li>
 </ul>
+
+<h1 class="long">Wow! So Very Old Pictures!</h1>
+<h1 class="short">So Old Pictures!</h1>
+<p class="number">(<%= Picture.created_before(1.month.ago).count %> many old pictures)</p>
+
+<ul class="allpics clearfix">
+  <% Picture.created_before(1.month.ago).each do |picture| %>
+  <li class="small_pic">
+    <figure >
+      <%= link_to image_tag(picture.url), "/pictures/#{picture.id}" %>
+      <br>
+      <caption><%= picture.title %> <br> <%= link_to "#{picture.artist}", "/artists/#{picture.artist}" %></caption>
+    </figure>
+  </li>
+  <% end %>
+<ul>
