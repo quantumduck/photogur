@@ -1,14 +1,11 @@
 class PicturesController < ApplicationController
   def index
-    @pictures = Picture.all
-    @width = 300
+    # @pictures = Picture.all
+    @most_recent_pictures = Picture.most_recent_five
   end
 
   def show
     @picture = Picture.find(params[:id])
-    @comments = Comment.where(picture: params[:id])
-    # puts "COMMENT CONTENTS = "
-    # puts @comments[0].contents
   end
 
   def new
@@ -51,10 +48,6 @@ class PicturesController < ApplicationController
   def destroy
     @picture = Picture.find(params[:id])
     @picture.destroy
-    # remove abandoned comments as well:
-    comments = Comment.where(picture: params[:id])
-    comments.each { |comment| comment.destroy }
-
     redirect_to pictures_url
   end
 
